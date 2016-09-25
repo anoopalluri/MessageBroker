@@ -1,0 +1,28 @@
+<project name="IIB Project Build" default="id" >
+
+<target name="id">
+
+<property name="path.iib" value="C:\Program Files\IBM\IIB\10.0.0.2"/>
+<antcall target="build"/>
+</target>
+
+<target name="build">
+<echo message="Build started"/>
+<exec executable="${path.iib}\tools\mqsicreatebar.exe">
+<arg value="-data"/>
+<arg value="${basedir}\..\"/>
+<arg value="-b"/>
+<arg value="${basedir}\Sample.bar"/>
+<arg value="-a"/>
+<arg value="SampleApp"/>
+<arg value="-l"/>
+<arg value="SampleLib"/>
+<arg value="-deployAsSource"/>
+</exec>
+	
+	
+	
+</target>
+
+
+</project>
